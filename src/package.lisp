@@ -58,6 +58,7 @@
            #:clock-now
            #:clock-today
            #:find-timezone-by-location-name
+           #:reread-timezone-repository
            #:now
            #:today
            #:enable-read-macros
@@ -86,6 +87,6 @@
            #:astronomical-julian-date
            #:modified-julian-date
            #:astronomical-modified-julian-date
-	   #:*use-political-time*
-	   #:with-scientific-time
-	   #:with-political-time))
+           #:*use-political-time*
+           #:with-scientific-time
+           #:with-political-time))
