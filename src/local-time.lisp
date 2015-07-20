@@ -442,10 +442,10 @@ In other words:
                  (invalid-timezone-file () nil)))))
       (setf *location-name->timezone* (make-hash-table :test 'equal))
       (setf *abbreviated-subzone-name->timezone-list* (make-hash-table :test 'equal))
-      (cl-fad:walk-directory root-directory #'visitor :directories nil
+      (cl-fad:walk-directory root-directory #'visitor :directories nil :follow-symlinks nil
                              :test (lambda (file)
                                      (not (find "etc" (pathname-directory file) :test #'string=))))
-      (cl-fad:walk-directory (merge-pathnames "/etc/" root-directory) #'visitor :directories nil))))
+      #+nil(cl-fad:walk-directory (merge-pathnames "/etc/" root-directory) #'visitor :directories nil))))
 
 (defmacro make-timestamp (&rest args)
   `(make-instance 'timestamp ,@args))
